@@ -20,5 +20,12 @@ namespace WFRestaurante
             }
         
         }
+        public Categoria ConsultarId(int idcategoria)
+        {
+            Categoria categoria = new Categoria();
+            /* falta codigo*/
+            return categoria;
+        }
+
     }
 }

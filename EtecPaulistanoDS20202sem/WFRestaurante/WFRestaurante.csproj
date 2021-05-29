@@ -67,6 +67,7 @@
     <Compile Include="Model\Categorias.cs" />
     <Compile Include="Model\Cliente.cs" />
     <Compile Include="Model\Clientes.cs" />
+    <Compile Include="Model\Pedido.cs" />
     <Compile Include="Model\Pessoas.cs" />
     <Compile Include="View\FrmCliente.cs">
       <SubType>Form</SubType>

@@ -6,7 +6,6 @@
 /**********************************************************************************************/
 using System;
 using System.Windows.Forms;
-using WFRestaurante.Control;
 
 namespace WFRestaurante
 {
@@ -18,13 +17,17 @@ namespace WFRestaurante
         public FormCliente()
         {
             InitializeComponent(); // Inicio dos componentes no formulario
+        }
+        private void FormCliente_Load(object sender, EventArgs e)
+        {
             cliente = new Cliente();
-            this.Novo = false;            
+            this.Novo = false;
             dataGridViewPessoas.DataSource = cliente.Consultar("");
             this.AtualizarDados(0);
             this.ControleComponentes(false);
-
         }
+
+
         private void buttonShow_Click(object sender, EventArgs e)
         {
             try
@@ -56,7 +59,7 @@ namespace WFRestaurante
                     {
                         MessageBox.Show("Campo Nome em branco!!!");
                     }
-                    this.AtualizarDados(0);
+                    this.AtualizaDatagrid();
                 }
             }
             catch (Exception ex)
@@ -93,11 +96,10 @@ namespace WFRestaurante
             
         }
 
-        private void textBoxPesquisa_TextChanged(object sender, EventArgs e)
+        private void AtualizaDatagrid()
         {
             try
             {
-                
                 dataGridViewPessoas.DataSource = cliente.Consultar(textBoxPesquisa.Text);
                 this.AtualizarDados(0);
             }
@@ -107,22 +109,12 @@ namespace WFRestaurante
             }
         }
 
-        public void Inserir(Cliente cliente)
+        private void textBoxPesquisa_TextChanged(object sender, EventArgs e)
         {
-            // Salvar dados na tabela Pessoas(Nome, DataNascimento)
-                
+            this.AtualizaDatagrid();
         }
         
-        private void dataGridViewPessoas_RowEnter(object sender, DataGridViewCellEventArgs e)
-        {
-
-        //    MessageBox.Show("A");
-            // Cada linha tem 3 colunas - id = [0], Nome = [1] e Datanascimento = [2]
-
-       //     textBoxNome.Text = dataGridViewPessoas.CurrentRow.Cells[1].Value.ToString()                ;
-        }
-
-        private void dataGridViewPessoas_CellClick(object sender, DataGridViewCellEventArgs e)
+       private void dataGridViewPessoas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             //Atribuição dos valores selecionado na Grid
             Int32 linha = Int32.Parse(dataGridViewPessoas.CurrentRow.Index.ToString());
@@ -153,41 +145,20 @@ namespace WFRestaurante
                 dataGridViewPessoas.Columns["NASCIMENTO"].DisplayIndex  = 2;
                 dataGridViewPessoas.Columns["TELEFONE"].DisplayIndex    = 3;
                 dataGridViewPessoas.Columns["ENDEREÇO"].DisplayIndex    = 4;
-                //.Columns[1].Width = 40;
-
-                // dataGridViewPessoas.Columns["ID"].DisplayIndex = 0;
-                //dataGridViewPessoas.Columns["ID"].DisplayIndex = 0;
-                //dataGridViewPessoas.Columns["ID"].DisplayIndex = 0;
-
+              
             }
             catch (Exception ex)
             {
                 throw ex;
             }
             
-
         }
 
         private void buttonSair_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-        private void labelNome_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void labelDataNascimento_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void buttonNovo_Click(object sender, EventArgs e)
         {
             try
@@ -198,9 +169,18 @@ namespace WFRestaurante
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void buttonAtualizar_Click(object sender, EventArgs e)
+        {
+         
+        }
+
+        private void textBoxNome_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

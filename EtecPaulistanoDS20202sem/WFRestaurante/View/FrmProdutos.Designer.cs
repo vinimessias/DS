@@ -30,10 +30,10 @@ namespace WFRestaurante
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBoxCodigo = new System.Windows.Forms.TextBox();
+            this.textBoxDescricao = new System.Windows.Forms.TextBox();
+            this.textBoxPreço = new System.Windows.Forms.TextBox();
+            this.comboBoxCategoria = new System.Windows.Forms.ComboBox();
             this.buttonGravar = new System.Windows.Forms.Button();
             this.buttonFechar = new System.Windows.Forms.Button();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -42,7 +42,10 @@ namespace WFRestaurante
             this.labelPreço = new System.Windows.Forms.Label();
             this.labelCategoria = new System.Windows.Forms.Label();
             this.labelPesquisa = new System.Windows.Forms.Label();
+            this.pictureBoxProduto = new System.Windows.Forms.PictureBox();
+            this.buttonFoto = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProduto)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -52,37 +55,37 @@ namespace WFRestaurante
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(751, 199);
+            this.dataGridView1.Size = new System.Drawing.Size(516, 199);
             this.dataGridView1.TabIndex = 0;
             // 
-            // textBox1
+            // textBoxCodigo
             // 
-            this.textBox1.Location = new System.Drawing.Point(26, 298);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(130, 26);
-            this.textBox1.TabIndex = 1;
+            this.textBoxCodigo.Location = new System.Drawing.Point(26, 298);
+            this.textBoxCodigo.Name = "textBoxCodigo";
+            this.textBoxCodigo.Size = new System.Drawing.Size(130, 26);
+            this.textBoxCodigo.TabIndex = 1;
             // 
-            // textBox2
+            // textBoxDescricao
             // 
-            this.textBox2.Location = new System.Drawing.Point(188, 298);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(417, 26);
-            this.textBox2.TabIndex = 2;
+            this.textBoxDescricao.Location = new System.Drawing.Point(188, 298);
+            this.textBoxDescricao.Name = "textBoxDescricao";
+            this.textBoxDescricao.Size = new System.Drawing.Size(417, 26);
+            this.textBoxDescricao.TabIndex = 2;
             // 
-            // textBox3
+            // textBoxPreço
             // 
-            this.textBox3.Location = new System.Drawing.Point(637, 298);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(130, 26);
-            this.textBox3.TabIndex = 3;
+            this.textBoxPreço.Location = new System.Drawing.Point(637, 298);
+            this.textBoxPreço.Name = "textBoxPreço";
+            this.textBoxPreço.Size = new System.Drawing.Size(130, 26);
+            this.textBoxPreço.TabIndex = 3;
             // 
-            // comboBox1
+            // comboBoxCategoria
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(26, 359);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(271, 28);
-            this.comboBox1.TabIndex = 4;
+            this.comboBoxCategoria.FormattingEnabled = true;
+            this.comboBoxCategoria.Location = new System.Drawing.Point(26, 359);
+            this.comboBoxCategoria.Name = "comboBoxCategoria";
+            this.comboBoxCategoria.Size = new System.Drawing.Size(271, 28);
+            this.comboBoxCategoria.TabIndex = 4;
             // 
             // buttonGravar
             // 
@@ -92,6 +95,7 @@ namespace WFRestaurante
             this.buttonGravar.TabIndex = 5;
             this.buttonGravar.Text = "Gravar";
             this.buttonGravar.UseVisualStyleBackColor = true;
+            this.buttonGravar.Click += new System.EventHandler(this.buttonGravar_Click);
             // 
             // buttonFechar
             // 
@@ -105,7 +109,7 @@ namespace WFRestaurante
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(518, 25);
+            this.textBox4.Location = new System.Drawing.Point(303, 22);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(259, 26);
             this.textBox4.TabIndex = 7;
@@ -149,17 +153,37 @@ namespace WFRestaurante
             // labelPesquisa
             // 
             this.labelPesquisa.AutoSize = true;
-            this.labelPesquisa.Location = new System.Drawing.Point(434, 31);
+            this.labelPesquisa.Location = new System.Drawing.Point(223, 25);
             this.labelPesquisa.Name = "labelPesquisa";
             this.labelPesquisa.Size = new System.Drawing.Size(74, 20);
             this.labelPesquisa.TabIndex = 12;
             this.labelPesquisa.Text = "Pesquisa";
+            // 
+            // pictureBoxProduto
+            // 
+            this.pictureBoxProduto.Location = new System.Drawing.Point(567, 60);
+            this.pictureBoxProduto.Name = "pictureBoxProduto";
+            this.pictureBoxProduto.Size = new System.Drawing.Size(193, 174);
+            this.pictureBoxProduto.TabIndex = 13;
+            this.pictureBoxProduto.TabStop = false;
+            // 
+            // buttonFoto
+            // 
+            this.buttonFoto.Location = new System.Drawing.Point(690, 204);
+            this.buttonFoto.Name = "buttonFoto";
+            this.buttonFoto.Size = new System.Drawing.Size(70, 30);
+            this.buttonFoto.TabIndex = 14;
+            this.buttonFoto.Text = "Foto";
+            this.buttonFoto.UseVisualStyleBackColor = true;
+            this.buttonFoto.Click += new System.EventHandler(this.buttonFoto_Click);
             // 
             // FrmProdutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonFoto);
+            this.Controls.Add(this.pictureBoxProduto);
             this.Controls.Add(this.labelPesquisa);
             this.Controls.Add(this.labelCategoria);
             this.Controls.Add(this.labelPreço);
@@ -168,14 +192,15 @@ namespace WFRestaurante
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.buttonFechar);
             this.Controls.Add(this.buttonGravar);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.comboBoxCategoria);
+            this.Controls.Add(this.textBoxPreço);
+            this.Controls.Add(this.textBoxDescricao);
+            this.Controls.Add(this.textBoxCodigo);
             this.Controls.Add(this.dataGridView1);
             this.Name = "FrmProdutos";
             this.Text = "FrmProdutos";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProduto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,10 +209,10 @@ namespace WFRestaurante
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox textBoxCodigo;
+        private System.Windows.Forms.TextBox textBoxDescricao;
+        private System.Windows.Forms.TextBox textBoxPreço;
+        private System.Windows.Forms.ComboBox comboBoxCategoria;
         private System.Windows.Forms.Button buttonGravar;
         private System.Windows.Forms.Button buttonFechar;
         private System.Windows.Forms.TextBox textBox4;
@@ -196,5 +221,7 @@ namespace WFRestaurante
         private System.Windows.Forms.Label labelPreço;
         private System.Windows.Forms.Label labelCategoria;
         private System.Windows.Forms.Label labelPesquisa;
+        private System.Windows.Forms.PictureBox pictureBoxProduto;
+        private System.Windows.Forms.Button buttonFoto;
     }
 }

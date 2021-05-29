@@ -72,7 +72,6 @@
             this.labelNome.Size = new System.Drawing.Size(51, 20);
             this.labelNome.TabIndex = 2;
             this.labelNome.Text = "Nome";
-            this.labelNome.Click += new System.EventHandler(this.labelNome_Click);
             // 
             // dateTimePickerNascimento
             // 
@@ -91,7 +90,6 @@
             this.labelDataNascimento.Size = new System.Drawing.Size(154, 20);
             this.labelDataNascimento.TabIndex = 4;
             this.labelDataNascimento.Text = "Data de Nascimento";
-            this.labelDataNascimento.Click += new System.EventHandler(this.labelDataNascimento_Click);
             // 
             // dataGridViewPessoas
             // 
@@ -104,7 +102,6 @@
             this.dataGridViewPessoas.Size = new System.Drawing.Size(830, 234);
             this.dataGridViewPessoas.TabIndex = 5;
             this.dataGridViewPessoas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPessoas_CellClick);
-            this.dataGridViewPessoas.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPessoas_RowEnter);
             // 
             // textBoxPesquisa
             // 
@@ -145,6 +142,7 @@
             this.buttonAtualizar.TabIndex = 9;
             this.buttonAtualizar.Text = "Atualizar";
             this.buttonAtualizar.UseVisualStyleBackColor = true;
+            this.buttonAtualizar.Click += new System.EventHandler(this.buttonAtualizar_Click);
             // 
             // buttonNovo
             // 
@@ -177,7 +175,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormCliente";
             this.Text = "Cliente";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.FormCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPessoas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
