@@ -111,7 +111,7 @@ namespace WFRestaurante
             // 
             this.textBox4.Location = new System.Drawing.Point(303, 22);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(259, 26);
+            this.textBox4.Size = new System.Drawing.Size(457, 26);
             this.textBox4.TabIndex = 7;
             // 
             // labelCodigo
